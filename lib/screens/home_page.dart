@@ -232,6 +232,9 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+                SizedBox(
+                  height: 2.h,
+                ),
                 Row(
                   children: [
                     Text("Dont have an account?"),
