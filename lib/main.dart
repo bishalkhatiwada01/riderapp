@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:riderapp/screens/home_page.dart';
 import 'package:riderapp/screens/splash_screen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
           theme: ThemeData.light(),
-          home: SplashScreen(),
+          home: const SplashScreen(),
         );
       },
     );
