@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riderapp/screens/home_page.dart';
+import 'package:riderapp/screens/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -183,8 +184,8 @@ class _LoginPageState extends State<LoginPage> {
                           // Handle button press
                         },
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color.fromARGB(255, 238, 238, 238)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.black),
                         ),
@@ -215,8 +216,8 @@ class _LoginPageState extends State<LoginPage> {
                           // Handle button press
                         },
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color.fromARGB(255, 238, 238, 238)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.black),
                         ),
@@ -248,9 +249,18 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Dont have an account?"),
-                    const SizedBox(),
-                    TextButton(onPressed: () {}, child: const Text("SignUp"))
+                    const Text("New to RiderOP?"),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => SignupPage()));
+                        },
+                        child: const Text(
+                          "SignUp",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 70, 17, 155),
+                              fontWeight: FontWeight.bold),
+                        ))
                   ],
                 )
               ],
