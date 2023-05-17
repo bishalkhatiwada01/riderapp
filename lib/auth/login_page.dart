@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:riderapp/auth/forgot_pass.dart';
 import 'package:riderapp/screens/home_page.dart';
-import 'package:riderapp/screens/signup_page.dart';
+import 'package:riderapp/auth/signup_page.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -110,7 +111,10 @@ class _LoginPageState extends State<LoginPage> {
                       width: 17.w,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ForgotPasswordPage()));
+                      },
                       child: const Text(
                         "Forgot Password",
                         style: TextStyle(color: Colors.red),

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:riderapp/screens/home_page.dart';
-import 'package:riderapp/screens/login_page.dart';
+
+import 'package:riderapp/auth/login_page.dart';
 import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {

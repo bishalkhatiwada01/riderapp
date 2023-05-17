@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riderapp/screens/home_page.dart';
-import 'package:riderapp/screens/login_page.dart';
+
+import 'package:riderapp/auth/login_page.dart';
 import 'package:sizer/sizer.dart';
 
 class SignupPage extends StatefulWidget {
@@ -42,14 +42,14 @@ class _SignupPageState extends State<SignupPage> {
                 height: 5.h,
               ),
               Text(
-                "Hello, Riders!👋",
+                "Create an account",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 3.h,
                     fontWeight: FontWeight.w500),
               ),
               const Text(
-                "Welcome back!",
+                "Connect with your friends today!",
                 style: TextStyle(fontStyle: FontStyle.italic),
               ),
               SizedBox(
@@ -182,18 +182,18 @@ class _SignupPageState extends State<SignupPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 120,
+                      width: 100,
                       height: 1,
                       color: Colors.black,
                     ),
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        'Or With',
+                        'Or Signup With',
                       ),
                     ),
                     Container(
-                      width: 120,
+                      width: 100,
                       height: 1,
                       color: Colors.black,
                     ),
