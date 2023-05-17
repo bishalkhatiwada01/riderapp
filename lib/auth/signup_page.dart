@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'package:riderapp/auth/login_page.dart';
@@ -154,7 +156,7 @@ class _SignupPageState extends State<SignupPage> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Container(
+                    child: SizedBox(
                       height: 6.h,
                       width: double.infinity,
                       child: ElevatedButton(
@@ -214,7 +216,7 @@ class _SignupPageState extends State<SignupPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(255, 238, 238, 238)),
+                            const Color.fromARGB(255, 238, 238, 238)),
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.black),
                       ),
@@ -244,7 +246,7 @@ class _SignupPageState extends State<SignupPage> {
                       onPressed: () {},
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(255, 238, 238, 238)),
+                            const Color.fromARGB(255, 238, 238, 238)),
                         foregroundColor:
                             MaterialStateProperty.all<Color>(Colors.black),
                       ),
@@ -280,7 +282,7 @@ class _SignupPageState extends State<SignupPage> {
                   TextButton(
                       onPressed: () {
                         Navigator.of(context).pop(MaterialPageRoute(
-                            builder: (context) => LoginPage()));
+                            builder: (context) => const LoginPage()));
                       },
                       child: const Text(
                         "Login",

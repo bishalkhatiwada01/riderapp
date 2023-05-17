@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:riderapp/auth/forgot_pass.dart';
 import 'package:riderapp/screens/home_page.dart';
@@ -102,22 +104,21 @@ class _LoginPageState extends State<LoginPage> {
                     Checkbox(
                       value: rememberMe,
                       onChanged: (value) {
-                        // Update the state of "rememberMe" when the checkbox value changes
                         rememberMe = value!;
                       },
                     ),
                     const Text('Remember Me'),
-                    SizedBox(
-                      width: 17.w,
-                    ),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ForgotPasswordPage()));
+                            builder: (context) => const ForgotPasswordPage()));
                       },
-                      child: const Text(
-                        "Forgot Password",
-                        style: TextStyle(color: Colors.red),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 50),
+                        child: Text(
+                          "Forgot Password",
+                          style: TextStyle(color: Colors.red),
+                        ),
                       ),
                     ),
                   ],
@@ -129,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
-                      child: Container(
+                      child: SizedBox(
                         height: 6.h,
                         width: double.infinity,
                         child: ElevatedButton(
@@ -189,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              Color.fromARGB(255, 238, 238, 238)),
+                              const Color.fromARGB(255, 238, 238, 238)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.black),
                         ),
@@ -221,7 +222,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                              Color.fromARGB(255, 238, 238, 238)),
+                              const Color.fromARGB(255, 238, 238, 238)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.black),
                         ),
@@ -257,7 +258,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignupPage()));
+                              builder: (context) => const SignupPage()));
                         },
                         child: const Text(
                           "SignUp",
