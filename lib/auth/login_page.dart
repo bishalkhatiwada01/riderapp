@@ -5,6 +5,7 @@ import 'package:riderapp/auth/forgot_pass.dart';
 import 'package:riderapp/screens/home_page.dart';
 import 'package:riderapp/auth/signup_page.dart';
 import 'package:sizer/sizer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -21,6 +22,15 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       _obscureText = !_obscureText;
     });
+  }
+
+  void openWebsite() async {
+    const url = 'https://www.example.com';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -185,9 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       width: 40.w,
                       child: ElevatedButton(
-                        onPressed: () {
-                          // Handle button press
-                        },
+                        onPressed: () {},
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
                               const Color.fromARGB(255, 238, 238, 238)),

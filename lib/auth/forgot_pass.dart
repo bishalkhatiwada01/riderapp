@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riderapp/auth/otp_page.dart';
 import 'package:sizer/sizer.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
@@ -18,12 +19,29 @@ class ForgotPasswordPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(0, 250, 250, 250),
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_new,
-            color: Colors.black,
-          ),
-          onPressed: () {},
+        leading: Stack(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 3.w),
+              child: Container(
+                width: 8.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.black, width: 2.0),
+                ),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    size: 5.w,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            )
+          ],
         ),
       ),
       body: Padding(
@@ -31,7 +49,7 @@ class ForgotPasswordPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 12.h,
+              height: 4.h,
             ),
             Center(
               child: Text(
@@ -90,7 +108,10 @@ class ForgotPasswordPage extends StatelessWidget {
                   right: Radius.circular(30.0),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => OtpPage()));
+                  },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
                       const Color.fromARGB(255, 81, 18, 163),
@@ -104,7 +125,7 @@ class ForgotPasswordPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 2.h,
+              height: 5.h,
             ),
             Text(
               "or",
@@ -113,7 +134,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   color: const Color.fromARGB(255, 81, 18, 163)),
             ),
             SizedBox(
-              height: 2.h,
+              height: 1.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -138,7 +159,7 @@ class ForgotPasswordPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 4.h,
+              height: 8.h,
             ),
             const Text(
               "Do you have an account?",
@@ -175,7 +196,7 @@ class ForgotPasswordPage extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(Colors.white),
                   ),
                   child: Text(
-                    'Send OTP',
+                    'Sign up',
                     style: TextStyle(fontSize: 12.sp, color: Colors.black45),
                   ),
                 ),
