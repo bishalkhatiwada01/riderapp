@@ -18,6 +18,12 @@ class _LoginPageState extends State<LoginPage> {
   bool _obscureText = true;
   bool rememberMe = false;
 
+  final bool _isLogin = true;
+  bool _loading = false;
+  final _formkey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   void _togglePasswordVisibility() {
     setState(() {
       _obscureText = !_obscureText;
@@ -45,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
+                  key: _formkey,
                   child: Padding(
                     padding: EdgeInsets.only(top: 5.h),
                     child: Image.asset(
@@ -72,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 FormField(
                   builder: (field) {
                     return TextField(
+                      controller: _emailController,
                       decoration: InputDecoration(
                         labelText: "Email",
                         hintText: "Enter your email",
@@ -89,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                 FormField(
                   builder: (field) {
                     return TextFormField(
+                      controller: _passwordController,
                       obscureText: _obscureText,
                       decoration: InputDecoration(
                         labelText: "Password",
