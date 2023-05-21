@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:riderapp/auth/forgot_pass.dart';
 import 'package:riderapp/screens/home_page.dart';
 import 'package:riderapp/auth/signup_page.dart';
+import 'package:riderapp/screens/list_fruits.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -157,8 +158,12 @@ class _LoginPageState extends State<LoginPage> {
                               backgroundColor: MaterialStateProperty.all(
                                   const Color.fromARGB(255, 81, 18, 163))),
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (Context) => const HomePage()));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FruitListViewPage(),
+                              ),
+                            );
                           },
                           child: Text(
                             'Login',
